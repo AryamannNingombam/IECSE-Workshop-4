@@ -3,26 +3,30 @@ class Solution {
 public:
     int dfs(vector<vector<char>>& grid,int i,int j,int m,int n)
     {
-        if(i<0 || j<0 || i>=m || j>=n || grid[i][j]=='0')
+        if(i<0 || j<0 || i>=m || j>=n || grid[i][j]=='0') //Boundary check (0 is water) (Rest are Matrix boundaries)
             return 0;
-        grid[i][j]='0';
-        dfs(grid,i+1,j,m,n);
-        dfs(grid,i-1,j,m,n);
-        dfs(grid,i,j+1,m,n);
-        dfs(grid,i,j-1,m,n);
+        grid[i][j]='0'; //Visiting island (Can be considered as sunken as we visit it)
+        //4 Recursive DFS call for traverals across all the 4 directions discussed in the question
+        dfs(grid,i+1,j,m,n); // Check down
+        dfs(grid,i-1,j,m,n); // Check up
+        dfs(grid,i,j+1,m,n); // Check right
+        dfs(grid,i,j-1,m,n); // Check left
         return 1;
     }
     int numIslands(vector<vector<char>>& grid) {
         int m=grid.size(),n=grid[0].size();
-        int ctr=0;
+        int ctr=0; //counter variable to count isolated islands
+        //Traversing through mxn matrix
         for(int i=0;i<m;i++)
         {
             for(int j=0;j<n;j++)
             {
+                //Spotting islands 
                 if(grid[i][j]=='1')
-                ctr+=dfs(grid,i,j,m,n);
+                ctr+=dfs(grid,i,j,m,n); //Calling the DFS function the moment we find a possible island
             }
         }
+        //Return counter after finding all the possible isolated islands
         return ctr;
     }
 };
