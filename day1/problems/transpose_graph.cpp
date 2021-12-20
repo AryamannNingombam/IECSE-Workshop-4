@@ -3,10 +3,12 @@
 using namespace std;
 #define ll long long
 
+//adding child in a directed graph
 void addEdge(vector<int> adj[], int parent, int child) {
     adj[parent].push_back(child);
 }
 
+//display adj list
 void displayGraph(vector<int> adj[], int v) {
     for (int i = 0; i < v; i++) {
         cout << i << " -> ";
@@ -18,8 +20,8 @@ void displayGraph(vector<int> adj[], int v) {
 
 void transposeGraph(vector<int> adj[], vector<int> transpose[], int v) {
     for (int i = 0; i < v; i++)
-        for (int j = 0; j < adj[i].size(); j++)
-            addEdge(transpose, adj[i][j], i);
+        for (int j = 0; j < adj[i].size(); j++) //traversing through the list
+            addEdge(transpose, adj[i][j], i); //changed direction here
 }
 
 int main() {
@@ -39,8 +41,13 @@ int main() {
     addEdge(adj, 4, 1);
 
     vector<int> transpose[v];
+
+    //before transpose
     displayGraph(adj, v); cout << endl;
+
     transposeGraph(adj, transpose, v);
+
+    //after transpose
     displayGraph(transpose, v);
 
     return 0;
