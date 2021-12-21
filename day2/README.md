@@ -4,19 +4,22 @@
 
 - Disjoint Set Union
 - Bipartite Graph
-- Djikstra's Algorithm\*\*
-- MST\*\*
+
 
 ## PROBLEMS
 
 - [Connecting Islands](https://www.codechef.com/problems/CD1IT5)
-- [Coloring Problem](https://leetcode.com/problems/possible-bipartition/discuss/213114/The-classical-graph-problem-%222-Coloring-Problem%22-solved-using-DFS)
-- [News Distribution](https://codeforces.com/contest/1167/problem/C)
+- [Coloring Problem/ Check Bipartite](https://leetcode.com/problems/is-graph-bipartite/)
+
+## EXTRA TOPICS
+- Djikstra's Algorithm 
+- MST
 
 ## EXTRA PROBLEMS
 
 - [Network Delay Time](https://leetcode.com/problems/network-delay-time/)
 - [Transpose Graph](https://www.geeksforgeeks.org/transpose-graph)
+- [News Distribution](https://codeforces.com/contest/1167/problem/C)
 
 ## REFERENCES
 
