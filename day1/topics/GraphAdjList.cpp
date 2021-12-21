@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-
+#include <map>
 using namespace std;
 
 // undirected graph
@@ -9,13 +9,12 @@ class Graph
 private:
     // total elements in the graph;
     int elements;
-    vector<vector<int>> adj;
+    map<int, vector<int>> adj;
 
 public:
     Graph(int elements)
     {
         this->elements = elements;
-        this->adj.resize(elements);
     }
     void addEdge(int u, int v)
     {
